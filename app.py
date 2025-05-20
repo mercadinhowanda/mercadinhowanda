@@ -143,7 +143,6 @@ def usuarios():
     return render_template('usuarios.html', usuarios=usuarios)
 
 
-
 @app.route('/fornecedores', methods=['GET', 'POST'])
 def fornecedores():
     cur = mysql.connection.cursor()

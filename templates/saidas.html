@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Lançamento de Saídas (Vendas)</h2>
+<form method="POST" class="row g-3 mb-4">
+  <div class="col-md-2">
+    <label for="item_id" class="form-label">Código</label>
+    <select name="item_id" class="form-select">
+      {% for item in itens %}
+      <option value="{{ item[0] }}">{{ item[1] }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+    <div class="col-md-3">
+    <label for="desc" class="form-label">Descrição</label>
+    <input  name="desc" class="form-control" required>
+  </div>
+
+    <div class="col-md-2">
+    <label for="apres" class="form-label">Apresentação</label>
+    <input  name="apres" class="form-control" required>
+  </div>
+
+    <div class="col-md-2">
+    <label for="lote" class="form-label">Lote</label>
+    <input name="lote" class="form-control" required>
+  </div>
+    <div class="col-md-2">
+    <label for="val" class="form-label">Validade</label>
+    <input name="val" class="form-control" required>
+  </div>
+
+  <div class="col-md-2">
+    <label for="quantidade" class="form-label">Quantidade</label>
+    <input type="number" name="quantidade" class="form-control" required>
+  </div>
+
+    <div class="col-md-2">
+    <label for="quantidade" class="form-label">Valor Unitário</label>
+    <input type="number" name="quantidade" class="form-control" required>
+  </div>
+    <div class="col-md-2">
+    <label for="quantidade" class="form-label">Valor Total</label>
+    <input type="number" name="quantidade" class="form-control" required>
+  </div>
+
+  <div class="col-md-2">
+    <label for="data" class="form-label">Data</label>
+    <input type="date" name="data" class="form-control" required>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-danger">Lançar Venda</button>
+  </div>
+</form>
+{% endblock %}

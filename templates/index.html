@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Bem-vindo ao Mercadinho Wanda</h2>
+
+{% if entradas %}
+
+<div class="alert alert-warning">
+  <p></p>
+  <strong>Aviso:</strong> Produtos com validade próxima:
+  <ul>
+    {% for item in entradas %}
+    <li>{{ item[0] }} - {{ item[1] }} - {{ item[2] }} - {{ item[3] }} - {{ item[4] }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% else %}
+<p>Não há produtos com validade próxima.</p>
+{% endif %}
+{% endblock %}

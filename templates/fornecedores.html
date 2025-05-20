@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Fornecedores</h2>
+<form method="post">
+  <input name="nome" placeholder="Nome" required>
+  <input name="contato" placeholder="Contato">
+  <button type="submit">Cadastrar</button>
+</form>
+<table class="table">
+  <tr><th>Nome</th><th>Contato</th><th>Ações</th></tr>
+  {% for f in fornecedores %}
+  <tr>
+    <td>{{ f[1] }}</td><td>{{ f[2] }}</td>
+    <td>
+      <a href="?delete={{ f[0] }}">Excluir</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

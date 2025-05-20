@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Cadastros</h2>
+<ul>
+  <li><a href="{{ url_for('usuarios') }}">Usuários</a></li>
+  <li><a href="{{ url_for('itens') }}">Itens</a></li>
+  <li><a href="{{ url_for('fornecedores') }}">Fornecedores</a></li>
+</ul>
+{% endblock %}

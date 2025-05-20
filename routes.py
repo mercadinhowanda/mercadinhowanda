@@ -31,11 +31,13 @@ def login():
             flash('Email ou senha incorretos.')
     return render_template('login.html')
 
+
 @main.route('/logout')
 def logout():
     session.pop('usuario', None)
     flash('Logout realizado.')
     return redirect(url_for('main.login'))
+
 
 @main.route('/consultas')
 def consultas():
